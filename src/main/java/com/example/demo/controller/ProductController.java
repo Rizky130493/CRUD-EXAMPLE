@@ -40,10 +40,17 @@ public class ProductController {
 		return service.getProducts();
 	}
 	
-	@GetMapping("/products/{id}")
+	@GetMapping("/productById/{id}")
 	public Product findProductById(@PathVariable int id) {
 		return service.getProductById(id);
 	}
+	
+	@GetMapping("/productsByName/{name}")
+	public Product findProductByName(@PathVariable String name) {
+		return service.getProductByName(name);
+	}
+	
+	
 	
 	@PutMapping("/update")
 	public Product updateProduct(@RequestBody Product product) {
@@ -54,36 +61,4 @@ public class ProductController {
 	public String deleteProduct(@PathVariable int id) {
 		return service.deleteProduct(id);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
